@@ -6,6 +6,7 @@ import os
 from fabric.api import env, run
 from fabric.operations import put
 from datetime import datetime
+from os.path import isdir, exists
 
 
 env.hosts = ['54.158.80.63', '100.26.255.237']
@@ -35,11 +36,11 @@ def do_deploy(archive_path):
         return False
     try:
         file_name = archive_path.split("/")[-1]
-        no_exit = file_name.split(".")[0]
+        no_ext = file_name.split(".")[0]
         path = "/data/web_static/releases/"
         put(archive_path, '/tmp/')
-        run('mkdir -p {}{}/'.format(path, no_exit))
-        run('tar -xzf /tmp/{} -C {}{}/'.format(file_name, path, no_exit))
+        run('mkdir -p {}{}/'.format(path, no_ext))
+        run('tar -xzf /tmp/{} -C {}{}/'.format(file_name, path, no_ext))
         run('rm /tmp/{}'.format(file_name))
         return True
     except Exception as e:
