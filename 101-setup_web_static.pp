@@ -9,22 +9,27 @@ exec { 'b':
 
 exec { 'c':
   command => '/bin/mkdir -p /data/web_static/releases/test/',
+  path    => '/bin',
 }
 
 exec { 'd':
   command => '/bin/mkdir -p /data/web_static/shared/',
+  path    => '/bin',
 }
 
 exec { 'e':
-  command => '/bin/echo "Puppet x School" > /data/web_static/releases/test/index.html',
+  command => '/bin/echo "Puppet x Holberton School" > /data/web_static/releases/test/index.html',
+  path    => '/bin',
 }
 
 exec { 'f':
   command => '/bin/ln -sf /data/web_static/releases/test /data/web_static/current',
+  path    => '/bin',
 }
 
 exec { 'h':
   command => '/bin/sed -i "/listen 80 default_sever/a location /hbnb_static/ {alias /data/web_static/current/;}" /etc/nginx/sites-available/default',
+  path    => '/bin'
 }
 
 exec { 'i':
@@ -33,4 +38,5 @@ exec { 'i':
 
 exec { 'g':
   command => '/bin/chown -R ubuntu:ubuntu /data',
+  path    => '/bin'
 }
