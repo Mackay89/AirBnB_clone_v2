@@ -16,7 +16,7 @@ def do_pack():
     """
     Function to compress files in an archive
     """
-    local("mkdir -p varsions")
+    local("mkdir -p versions")
     file_name = "versions/web_static_{}.tgz".format(datetime.strftime(datetime.now(), "%Y%m%d%H%M%S"))
     result = local("tar -cvzf {} web_static".format(file_name))
     if result.failed:
@@ -27,7 +27,7 @@ def do_deploy(archive_path):
     """
     Function to distribute an archive to a server
     """
-    if not os.pathexists(archive_path):
+    if not os.path.exists(archive_path):
         return False
     rex = r'^versions/(.+)\.tgz'
     match = re.search(rex, archive_path)
