@@ -1,19 +1,39 @@
+#!/usr/bin/python3
+"""
+Script that starts a Flask web apllication.
+"""
+
+
 from flask import Flask
+
 
 app = Flask(__name__)
 
-@pp.route('/', strict_slashes=False)
+
+@app.route('/', strict_slashes=False)
 def hellow_hbnb():
+    """
+    Display "Hello HBNB!" on the root route.
+    """
+
     return "Hello HBNB!"
 
 
-@pp.route('/hbnb', strict_slashes=False)
+@app.route('/hbnb', strict_slashes=False)
 def hbnb():
+    """
+    Display "HBNB" on the /hbnb route.
+    """
+
     return "HBNB"
 
 
-@pp.route('/c/<text>', strict_slashes=False)
+@app.route('/c/<text>', strict_slashes=False)
 def c_text(text):
+    """
+    Display "C " followed by the value of the text variable.
+    """
+
     return "C " + text.replace('_', ' ')
 
 
