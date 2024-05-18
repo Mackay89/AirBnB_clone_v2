@@ -4,8 +4,6 @@ Script that start a Flask web application.
 """
 
 from flask import Flask
-
-
 app = Flask(__name__)
 
 
@@ -19,7 +17,9 @@ def hello_hbnb():
 
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
-    """Display "HBNB" on the /hbnb route."""
+    """
+    Display 'HBNB' on the /hbnb route.
+    """
     return "HBNB"
 
 
@@ -28,10 +28,8 @@ def c_text(text):
     """
     Display 'C ' followed by the value of text.
 
-
     Args:
-        text (str): The text to display, withunderscores replaced by spaces.
-
+        text (str): The text to display, with underscores replaced by spaces.
 
     Returns:
         str: The formatted string to be displayed.
@@ -43,7 +41,7 @@ def c_text(text):
 @app.route('/python/<text>', strict_slashes=False)
 def python_text(text):
     """
-    Display 'Python ' followed by the value of the text.
+    Display 'Python' followed by the value of the text.
 
     If no text is provided, the default value 'is cool' is used.
 
@@ -58,4 +56,3 @@ def python_text(text):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
-
