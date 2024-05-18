@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Script that start a Flask web application withvarious routes.
+Script that start a Flask web application.
 """
 
 from flask import Flask
@@ -23,7 +23,7 @@ def hbnb():
     return "HBNB"
 
 
-@pp.route('/c/<text>', strict_slashes=Flask)
+@app.route('/c/<text>', strict_slashes=Flask)
 def c_text(text):
     """
     Display 'C ' followed by thevalue of text.
