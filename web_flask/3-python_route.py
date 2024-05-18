@@ -5,6 +5,7 @@ Script that start a Flask web application.
 
 from flask import Flask
 
+
 app = Flask(__name__)
 
 
@@ -37,7 +38,9 @@ def c_text(text):
 @app.route('/python/<text>', strict_slashes=False)
 def python_text(text):
     """
-    replace more text with another variable.
+    Display 'Python ' followed by the value of the text.
+
+    If no text  is provided, the default value 'is cool' is used.
     """
     text = text.replace('_', ' ')
     return 'Python {}'.format(text)
