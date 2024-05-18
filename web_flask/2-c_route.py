@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Script that starts a Flask web apllication.
+Script that starts a Flask web application.
 """
 
 
