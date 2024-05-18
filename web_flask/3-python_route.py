@@ -32,9 +32,7 @@ def c_text(text):
     Display 'C ' followed by the value of text variable.
     Replace underscore _ symbols with a space.
     """
-
-    text = text.replace('_', ' ')
-    return 'C {}'.format(text)
+    return 'C {}'.format(text.replace('_', ' '))
 
 
 @app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)
@@ -44,9 +42,7 @@ def python_text(text):
     Display 'Python ' followed by the value of the text.
     If no text  is provided, the default value 'is cool' is used.
     """
-
-    text = text.replace('_', ' ')
-    return 'Python {}'.format(text)
+    return 'Python {}'.format(text.replace('_', ' '))
 
 
 if __name__ == '__main__':
