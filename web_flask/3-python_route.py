@@ -12,21 +12,21 @@ app = Flask(__name__)
 @app.route('/', strict_slashes=False)
 def hello_hbnb():
     """
-    Display 'Hello HBNB!' on the root route.
+    Display "hello HBNB!" on the root route.
     """
     return "hello HBNB!"
 
 
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
-    """Display 'HBNB' on the /hbnb route."""
+    """Display "HBNB" on the /hbnb route."""
     return "HBNB"
 
 
-@app.route('/c/<text>', strict_slashes=Flask)
+@app.route('/c/<text>', strict_slashes=False)
 def c_text(text):
     """
-    Display 'C ' followed by thevalue of text.
+    Display 'C ' followed by the value of text.
 
     Args:
         text (str); The text to display, with underscores replaced by spaces.
