@@ -12,7 +12,7 @@ app = Flask(__name__)
 @app.route('/', strict_slashes=False)
 def hello_hbnb():
     """
-    Display "hello HBNB!" on the root route.
+    Display 'hello HBNB!' on the root route.
     """
     return "hello HBNB!"
 
@@ -28,14 +28,15 @@ def c_text(text):
     """
     Display 'C ' followed by the value of text.
 
+
     Args:
-        text (str); The text to display, with underscores replaced by spaces.
+        text (str): The text to display, withunderscores replaced by spaces.
 
 
-    Reterns:
+    Returns:
         str: The formatted string to be displayed.
     """
-    return "Python " +text.replace('_', ' ')
+    return "C " + text.replace('_', ' ')
 
 
 @app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)
