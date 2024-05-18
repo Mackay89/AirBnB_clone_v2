@@ -20,7 +20,7 @@ def hello_hbnb():
 @pp.route('/hbnb', strict_slashes=False)
 def hbnb():
     """
-    Dsplay "HBNB" on the e /hbnb route.
+    Display "HBNB" on the /hbnb route.
     """
     return "HBNB"
 
