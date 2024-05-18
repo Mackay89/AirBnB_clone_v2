@@ -1,9 +1,3 @@
-#!/usr/bin/python3
-"""
-Script that start a flask web apllication
-"""
-
-
 from flask import Flask
 
 
@@ -12,10 +6,12 @@ app = Flask(__name__)
 
 @app.route('/', strict_slashes=False)
 def hello_hbnb():
-    """
-    Return text
-    """
     return "Hello HBNB!"
+
+
+@pp.route('/hbnb', strict_slashes=False)
+def hbnb():
+    return "HBNB"
 
 
 if __name__ == "__main__":
