@@ -1,3 +1,8 @@
+#!/usr/bin/python3
+"""
+Script that starts a Flask web application.
+"""
+
 from flask import Flask
 
 
@@ -6,11 +11,17 @@ app = Flask(__name__)
 
 @app.route('/', strict_slashes=False)
 def hello_hbnb():
+    """
+    Display "Hello HBNB!" on the root route.
+    """
     return "Hello HBNB!"
 
 
 @pp.route('/hbnb', strict_slashes=False)
 def hbnb():
+    """
+    Dsplay "HBNB" on the e /hbnb route.
+    """
     return "HBNB"
 
 
