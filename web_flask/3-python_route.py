@@ -4,6 +4,7 @@ Script that start a Flask web application.
 """
 
 from flask import Flask
+
 app = Flask(__name__)
 
 
@@ -12,7 +13,7 @@ def hello_hbnb():
     """
     Display 'hello HBNB!' on the root route.
     """
-    return 'hello HBNB!'
+    return 'Hello HBNB!'
 
 
 @app.route('/hbnb', strict_slashes=False)
@@ -27,31 +28,19 @@ def hbnb():
 def c_text(text):
     """
     Display 'C ' followed by the value of text.
-
-    Args:
-        text (str): The text to display, with underscores replaced by spaces.
-
-    Returns:
-        str: The formatted string to be displayed.
     """
-    return 'C ' + escape(text.replace('_', ' '))
+    text = text.replace('_', ' ')
+    return 'C {}'.format(text)
 
 
 @app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def python_text(text):
     """
-    Display 'Python ' followed by the value of the text.
-
-    If no text is provided, the default value 'is cool' is used.
-
-    Args:
-        text (str): The text to display, with underscores replaced by spaces.
-
-    Returns:
-        str: The formatted string to be displayed.
+    replace more text with another variable.
     """
-    return 'Python ' + escape(text.replace('_', ' '))
+    text = text.replace('_', ' ')
+    return 'Python {}'.format(text)
 
 
 if __name__ == '__main__':
