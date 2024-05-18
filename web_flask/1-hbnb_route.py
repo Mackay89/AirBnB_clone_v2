@@ -14,14 +14,16 @@ def hello_hbnb():
     """
     Display "Hello HBNB!" on the root route.
     """
+
     return "Hello HBNB!"
 
 
-@pp.route('/hbnb', strict_slashes=False)
+@app.route('/hbnb', strict_slashes=False)
 def hbnb():
     """
     Display "HBNB" on the /hbnb route.
     """
+
     return "HBNB"
 
 
