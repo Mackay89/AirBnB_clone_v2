@@ -12,7 +12,7 @@ def hello_hbnb():
     """
     Display 'hello HBNB!' on the root route.
     """
-    return "hello HBNB!"
+    return 'hello HBNB!'
 
 
 @app.route('/hbnb', strict_slashes=False)
@@ -20,7 +20,7 @@ def hbnb():
     """
     Display 'HBNB' on the /hbnb route.
     """
-    return "HBNB"
+    return 'HBNB'
 
 
 @app.route('/c/<text>', strict_slashes=False)
@@ -34,14 +34,14 @@ def c_text(text):
     Returns:
         str: The formatted string to be displayed.
     """
-    return "C " + text.replace('_', ' ')
+    return 'C ' + escape(text.replace('_', ' '))
 
 
 @app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def python_text(text):
     """
-    Display 'Python' followed by the value of the text.
+    Display 'Python ' followed by the value of the text.
 
     If no text is provided, the default value 'is cool' is used.
 
@@ -51,7 +51,7 @@ def python_text(text):
     Returns:
         str: The formatted string to be displayed.
     """
-    return "Python " + text.replace('_', ' ')
+    return 'Python ' + escape(text.replace('_', ' '))
 
 
 if __name__ == '__main__':
