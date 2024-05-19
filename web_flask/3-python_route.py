@@ -2,6 +2,7 @@
 """
 Script that start a Flask web application.
 """
+print("Starting Flask App")
 
 
 from flask import Flask
@@ -27,7 +28,7 @@ def hbnb():
 
 
 @app.route('/c/<text>', strict_slashes=False)
-def hello_route(text):
+def c_route(text):
     """
     Return 'C ' followed by the value of text variable.
     Replace underscore _ symbols with a space.
@@ -37,7 +38,7 @@ def hello_route(text):
 
 @app.route('/python/', strict_slashes=False)
 @app.route('/python/<text>', defaults={'text': 'is cool'})
-def python_text(text):
+def python_route(text):
     """
     Return 'Python ' followed by the value of the text.
     Replace underscore _ symbols with a space. Default value of text is "is cool".
