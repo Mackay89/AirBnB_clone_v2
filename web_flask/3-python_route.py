@@ -13,7 +13,7 @@ app = Flask(__name__)
 @app.route('/', strict_slashes=False)
 def hello():
     """
-    Display 'Hello HBNB!' on the root route.
+    Return 'Hello HBNB!' on the root route.
     """
     return "Hello HBNB!"
 
@@ -21,29 +21,29 @@ def hello():
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
     """
-    Display 'HBNB' on the /hbnb route.
+    Return 'HBNB' on the /hbnb route.
     """
     return "HBNB"
 
 
 @app.route('/c/<text>', strict_slashes=False)
-def c_text(text):
+def hello_route(text):
     """
-    Display 'C ' followed by the value of text variable.
+    Return 'C ' followed by the value of text variable.
     Replace underscore _ symbols with a space.
     """
     return 'C {}'.format(text.replace('_', ' '))
 
 
 @app.route('/python/', strict_slashes=False)
-@app.route('/python/<text>', strict_slashes=False)
-def python_text(text="is cool"):
+@app.route('/python/<text>', defaults={'text': 'is cool'})
+def python_text(text):
     """
-    Display 'Python ' followed by the value of the text.
+    Return 'Python ' followed by the value of the text.
     Replace underscore _ symbols with a space. Default value of text is "is cool".
     """
     return 'Python {}'.format(text.replace('_', ' '))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
