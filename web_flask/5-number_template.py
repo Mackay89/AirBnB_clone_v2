@@ -10,7 +10,7 @@ app.url_map.strict_slashes = False
 
 
 @app.route('/')
-def hello_route():
+def hello_route1():
     """
     Display 'Hello HBNB!'
     """
@@ -18,7 +18,7 @@ def hello_route():
 
 
 @app.route('/hbnb')
-def hello_route1():
+def hello_route2():
     """
     display 'HBNB'
     """
@@ -26,7 +26,7 @@ def hello_route1():
 
 
 @app.route('/c/<text>')
-def c_route2(text):
+def c_route3(text):
     """
     Display 'C ' followed by the text from html request
     """
@@ -35,7 +35,7 @@ def c_route2(text):
 
 @app.route('/python/', defaults={'text': 'is cool'})
 @app.route('/python/<text>')
-def hello_route3(text):
+def hello_route4(text):
     """
     Display 'Python ' followed by text from html request with 
     default text 'is cool'
@@ -44,7 +44,7 @@ def hello_route3(text):
 
 
 @app.route('/number/<int:n>')
-def hello_route4(n):
+def hello_route5(n):
     """
     Display last part of html request formatted as a number if it can
     be converted to an int.
@@ -53,7 +53,7 @@ def hello_route4(n):
 
 
 @app.route('/numbe_template/<int:n>')
-def hello_route5(n):
+def hello_route6(n):
     """
     Display html template containing the number 'n'
     """
