@@ -2,19 +2,16 @@
 """
 Script that start a Flask web application.
 """
-print("Starting Flask App")
 
 
 from flask import Flask
-
-
 app = Flask(__name__)
 
 
 @app.route('/', strict_slashes=False)
 def hello():
     """
-    Return 'Hello HBNB!' on the root route.
+    Return Hello HBNB!
     """
     return "Hello HBNB!"
 
@@ -22,28 +19,28 @@ def hello():
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
     """
-    Return 'HBNB' on the /hbnb route.
+    Return HBNB.
     """
     return "HBNB"
 
 
 @app.route('/c/<text>', strict_slashes=False)
-def c_route(text):
+def cisfun(text):
     """
-    Return 'C ' followed by the value of text variable.
+    Display 'C ' followed by the value of text variable.
     Replace underscore _ symbols with a space.
     """
-    return 'C {}'.format(text.replace('_', ' '))
+    return 'C ' + text.replace('_', ' ')
 
 
 @app.route('/python/', strict_slashes=False)
 @app.route('/python/<text>', defaults={'text': 'is cool'})
 def python_route(text):
     """
-    Return 'Python ' followed by the value of the text.
+    Display 'Python ' followed by the value of the text.
     Replace underscore _ symbols with a space. Default value of text is "is cool".
     """
-    return 'Python {}'.format(text.replace('_', ' '))
+    return 'Python ' + text.replace('_', ' ')
 
 
 if __name__ == "__main__":
