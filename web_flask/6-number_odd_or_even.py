@@ -27,14 +27,14 @@ def hbnb():
 @app.route('/c/<text>')
 def c_route1(text):
     """
-    Return 'C ' followed by the text from html request
+    Display 'C ' followed by the text from html request
     """
     return 'C {}'.format(text.replace('_', ' '))
 
 
+@app.route('/python/')
 @app.route('/python/<text>')
-@app.route('/python/', default={'text': 'is cool'})
-def python_text(text):
+def python_text(text='is cool'):
     """
     Return 'Python ' followed by text from html request with default
     text 'is cool'
@@ -56,13 +56,17 @@ def number_template(n):
     """
     return render_template('number.html', n=n)
 
+
 @app.route('/number_odd_or_even/<int:n>')
 def number_odd_or_even(n):
     """
     Return an html page starting whether the number n is even or odd.
     """
-    parity = "even" if n % 2 == 0 else "odd"
-    return render_template('odd_or_even.html', n=n, parity=parity)
+    if n % 2 == 0:
+        return render_template('odd_or_even.html', number=n, result='even')
+    else:
+        return render_templete('even_odd.html', number=n, result='odd')
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
