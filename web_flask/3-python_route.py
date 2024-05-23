@@ -28,7 +28,7 @@ def hbnb():
 
 
 @app.route('/c/<text>', strict_slashes=False)
-def c_is_fun(text):
+def c_text(text):
     """
     Display 'C ' followed by the value of <text>.
     """
@@ -40,7 +40,7 @@ def c_is_fun(text):
 @app.route('/python/<text>')
 def python_with_text(text):
     """
-    Display 'Python ' followed by the value text.
+    Display 'Python ' followed by the value of text.
     """
     text_no_underscore = text.replace('_', ' ')
     return "Python {}" .format(text_no_underscore)

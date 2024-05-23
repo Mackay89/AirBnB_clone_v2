@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 
 @app.route('/', strict_slashes=False)
-def hellow_hbnb():
+def hello_hbnb():
     """
     Display "Hello HBNB!" on the root route.
     """
