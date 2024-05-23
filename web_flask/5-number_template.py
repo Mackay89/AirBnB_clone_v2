@@ -20,7 +20,7 @@ def hello_route1():
 @app.route('/hbnb')
 def hello_route2():
     """
-    display 'HBNB'
+    Display 'HBNB'
     """
     return 'HBNB'
 
@@ -52,12 +52,12 @@ def hello_route5(n):
     return '{:d} is a number'.format(n)
 
 
-@app.route('/numbe_template/<int:n>')
+@app.route('/number_template/<int:n>')
 def hello_route6(n):
     """
     Display html template containing the number 'n'
     """
-    return render_template('5-number.html',n=n)
+    return render_template('5-number.html', number=n)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)

@@ -42,13 +42,6 @@ def python_text(text='is cool'):
     return 'Python {}'.format(text.replace('_', ' '))
 
 
-@app.route('/number/<int:n>')
-def number(n):
-    """
-    Return html containing the number 'n'
-    """
-    return "{} is a number".format(n)
-
 @app.route('/numbert_template/<int:n>')
 def number_template(n):
     """
@@ -65,7 +58,7 @@ def number_odd_or_even(n):
     if n % 2 == 0:
         return render_template('odd_or_even.html', number=n, result='even')
     else:
-        return render_templete('even_odd.html', number=n, result='odd')
+        return render_template('even_odd.html', number=n, result='odd')
 
 
 if __name__ == "__main__":

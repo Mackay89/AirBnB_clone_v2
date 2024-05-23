@@ -36,14 +36,14 @@ def c_text(text):
     return 'C {}'.format(text_no_underscore)
 
 
-@app.route('/python', defaults={'text': 'is cool'}, strict_slashes=False)
+@app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
-def python_with_text(text):
+def python_text(text='is cool'):
     """
-    Display 'Python ' followed by the value of text.
+    Display 'Python ' followed by text from html request with default
+    text 'is cool'.
     """
-    text_no_underscore = text.replace('_', ' ')
-    return "Python {}".format(text_no_underscore)
+    return "Python {}".format(text.replace('_', ' '))
 
 
 if __name__ == "__main__":
