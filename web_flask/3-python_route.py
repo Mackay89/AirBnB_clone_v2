@@ -33,7 +33,17 @@ def c_is_fun(text):
     Display 'C ' followed by the value of <text>.
     """
     text_no_underscore = text.replace('_', ' ')
-    return "C {}".format(text_no_underscore)
+    return 'C {}'.format(text_no_underscore)
+
+
+@app.route('/python', defaults={'text': 'is cool'})
+@app.route('/python/<text>')
+def python_with_text(text):
+    """
+    Display 'Python ' followed by the value text.
+    """
+    text_no_underscore = text.replace('_', ' ')
+    return "Python {}" .format(text_no_underscore)
 
 
 if __name__ == "__main__":
